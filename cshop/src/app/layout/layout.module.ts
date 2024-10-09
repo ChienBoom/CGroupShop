@@ -11,9 +11,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { TranslateModule } from '@ngx-translate/core';
+import { NotFoundComponent } from './notfound/notfound.component';
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -24,6 +27,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatButtonModule,
     MatButtonToggleModule,
     MatDividerModule,
+    MatMenuModule,
+    TranslateModule,
   ],
   exports: [LayoutComponent],
 })

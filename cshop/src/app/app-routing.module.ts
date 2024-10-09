@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { ModulesModule } from './modules/modules.module';
+import { NotFoundComponent } from './layout/notfound/notfound.component';
+import { TestCompoComponent } from './modules/test-compo/test-compo.component';
 
 const routes: Routes = [
   {
@@ -14,8 +16,9 @@ const routes: Routes = [
       },
     ],
   },
-  // { path: 'notfound', component: NotfoundComponent },
-  // { path: '**', redirectTo: '/notfound' }
+  { path: 'test', component: TestCompoComponent },
+  { path: 'notfound', component: NotFoundComponent },
+  { path: '**', redirectTo: '/notfound' },
 ];
 
 @NgModule({

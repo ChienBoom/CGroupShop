@@ -1,0 +1,47 @@
+// .expansion-wrapper {
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   z-index: 1; /* Ensure the panel appears above other content */
+// }
+
+.table-wrapper {
+  margin-top: 200px; /* Adjust this value as needed to create space for the expansion panel */
+}
+
+.custom-expansion {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1; /* Ensure the panel appears above other content */
+}
+
+.input-container {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  position: relative;
+}
+
+input {
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.expand-icon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+.content {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

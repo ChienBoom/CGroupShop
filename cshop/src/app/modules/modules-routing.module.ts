@@ -7,7 +7,12 @@ import { CategoryComponent } from './category/category.component';
   imports: [
     RouterModule.forChild([
       { path: '', component: HomeComponent },
+      { path: 'home', component: HomeComponent },
       { path: 'category', component: CategoryComponent },
+      { path: 'aboutUs', component: HomeComponent },
+      { path: 'service', component: HomeComponent },
+      { path: 'blog', component: CategoryComponent },
+      { path: 'contactUs', component: CategoryComponent },
     ]),
   ],
   exports: [RouterModule],

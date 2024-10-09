@@ -1,0 +1,33 @@
+<mat-label>{{ label }}</mat-label>
+<div class="w-full">
+  <input
+    type="text"
+    class="no-border select-bg h-12 border rounded-md w-full"
+    matInput
+    [value]="inputValue"
+    (keyup)="handleChangeInput($event)"
+    (focus)="handleFocus()"
+    (blur)="handleBlur()"
+    [matAutocomplete]="auto"
+    [disabled]="disabled"
+  />
+  <mat-autocomplete
+    autoActiveFirstOption
+    #auto="matAutocomplete"
+    [displayWith]="displayWith"
+    (optionSelected)="handleChangeSelect($event)"
+  >
+    <mat-option
+      *ngFor="let option of filteredOptions"
+      [value]="option[valueOption]"
+    >
+      {{ option[displayOption] }}
+    </mat-option>
+  </mat-autocomplete>
+  <mat-error *ngIf="control?.touched && control?.errors?.required"
+    >{{'Message.Mandatory' | translate}}</mat-error
+  >
+  <mat-error *ngIf="control?.touched && control?.errors?.minlength"
+    >{{'Message.MiniumLength' | translate}} </mat-error
+  >
+</div>

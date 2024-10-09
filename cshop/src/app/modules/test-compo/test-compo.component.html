@@ -1,0 +1,110 @@
+<form [formGroup]="form">
+  <div class="w-52">
+    <ara-color-picker
+      [value]="'#db2777'"
+      (onChange)="handleChangeColor($event)"
+      [disabled]="disabled"
+    ></ara-color-picker>
+  </div>
+
+  <div class="w-52">
+    <ara-autocomplete
+      [label]="'select'"
+      [lstOption]="lstOption"
+      formControlName="test1"
+      [formGroup]="form"
+      [controlName]="'test1'"
+      [displayOption]="'name'"
+      [required]="true"
+    ></ara-autocomplete>
+  </div>
+
+  <div class="w-52">
+    <ara-datepicker
+      formControlName="test2"
+      [value]="testDate"
+      [useForm]="false"
+      [label]="'Yeu cau chon ngay'"
+    ></ara-datepicker>
+  </div>
+
+  <div class="w-52">
+    <ara-daterange [label]="'Yeu cau chon ngay'"></ara-daterange>
+  </div>
+
+  <div class="w-52">
+    <ara-datetime-v2></ara-datetime-v2>
+  </div>
+
+  <div>
+    <input
+      matInput
+      [ngxMatDatetimePicker]="picker"
+      placeholder="Choose a date"
+    />
+    <ngx-mat-datepicker-toggle matSuffix [for]="picker">
+    </ngx-mat-datepicker-toggle>
+    <ngx-mat-datetime-picker
+      #picker
+      [showSpinners]="showSpinners"
+      [showSeconds]="showSeconds"
+      [stepHour]="stepHour"
+      [stepMinute]="stepMinute"
+      [stepSecond]="stepSecond"
+      [touchUi]="touchUi"
+      [enableMeridian]="true"
+      [color]="color"
+    >
+      >
+    </ngx-mat-datetime-picker>
+  </div>
+
+  <button mat-flat-button color="primary" (click)="handleChangeDisable()">
+    Disable/Enable
+  </button>
+
+  <button
+    mat-flat-button
+    class="ml-10"
+    color="primary"
+    [disabled]="!form.valid"
+    (click)="save()"
+  >
+    Submit
+  </button>
+</form>
+
+<!-- <h1>{{ "HELLO" | translate }}</h1>
+<p>{{ "WELCOME" | translate }}</p>
+
+<button (click)="switchLanguage('en')">English</button>
+<button (click)="switchLanguage('vi')">Tiếng Việt</button>
+
+<div class="expansion-wrapper">
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        Currently I am {{ panelOpenState ? "open" : "closed" }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</div> -->
+<div class="table-wrapper">
+  <button
+    mat-flat-button
+    class="ml-10"
+    color="primary"
+    [disabled]="!form.valid"
+    (click)="save()"
+  >
+    Submit
+  </button>
+
+  <button mat-flat-button class="ml-10" color="primary" [routerLink]="'/'">
+    Home
+  </button>
+</div>

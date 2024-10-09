@@ -4,14 +4,19 @@
       <img class="w-16 h-16" src="assets/logo/logo.svg" alt="Logo" />
     </div>
     <div class="flex items-center">
-      <mat-tab-group>
-        <mat-tab label="Home"></mat-tab>
-        <mat-tab label="Shop"></mat-tab>
-        <mat-tab label="About us"></mat-tab>
-        <mat-tab label="Servive"></mat-tab>
-        <mat-tab label="Blog"></mat-tab>
-        <mat-tab label="Contact us"></mat-tab>
+      <mat-tab-group (selectedTabChange)="onTabChange($event)">
+        <mat-tab label="{{'Menu.Home' | translate}}"></mat-tab>
+        <mat-tab label="{{'Menu.Category' | translate}}"></mat-tab>
+        <mat-tab label="{{'Menu.AboutUs' | translate}}"></mat-tab>
+        <mat-tab label="{{'Menu.Service' | translate}}"></mat-tab>
+        <mat-tab label="{{'Menu.Blog' | translate}}"></mat-tab>
+        <mat-tab label="{{'Menu.ContactUs' | translate}}"></mat-tab>
       </mat-tab-group>
+      <button mat-button [matMenuTriggerFor]="menu">{{ language }}</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="handleChangeMenu('vi')">VN</button>
+        <button mat-menu-item (click)="handleChangeMenu('en')">EN</button>
+      </mat-menu>
       <i class="fa-solid fa-cart-shopping fa-lg text-white ml-[20px]"></i>
       <i class="fa-solid fa-user fa-lg text-white ml-[20px]"></i>
     </div>
